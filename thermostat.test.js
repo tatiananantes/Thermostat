@@ -40,4 +40,24 @@ describe('Thermostat', () => {
     expect(thermostat.getEnergyUsage()).toBe('medium-usage');
   });
 
+  it('Gets the high energy usage', () => {
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.up();
+    }
+    expect(thermostat.getEnergyUsage()).toBe('high-usage');
+  });
+
+  it('Gets the current energy usage', () => {
+    thermostat.reset();
+    for (let i = 0 ; i < 10 ; i++) {
+      thermostat.down();
+    }
+    expect(thermostat.getEnergyUsage()).toBe('low-usage');
+  });
+
+  it('Temp can not drop below 10', () => {
+    thermostat.down();
+    expect(thermostat.getTemperature()).toBe(10);
+  })
+
 });
