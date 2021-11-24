@@ -31,4 +31,13 @@ describe('Thermostat', () => {
     expect(thermostat.getTemperature()).toBe(26);
   });
 
+  it('Can be reset to the default value', () => {
+    thermostat.reset();
+    expect(thermostat.getTemperature()).toBe(20);
+  });
+
+  it('Gets the current energy usage', () => {
+    expect(thermostat.getEnergyUsage()).toBe('medium-usage');
+  });
+
 });
