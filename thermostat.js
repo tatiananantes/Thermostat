@@ -8,7 +8,14 @@ class Thermostat {
   }  
 
   getTemperature() {
-    return this.temp;
+    if(this.temp === this.maxTemp) {
+      return `${this.temp} (maximum reached)`;
+    } else if(this.temp === 10) {
+      return `${this.temp} (minimum reached)`;
+    } 
+    else {
+      return this.temp;
+    } 
   }
 
   up() {

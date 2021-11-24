@@ -22,7 +22,7 @@ describe('Thermostat', () => {
     for (let i = 0 ; i < 10 ; i++) {
       thermostat.up();
     }
-    expect(thermostat.getTemperature()).toBe(25);
+    expect(thermostat.getTemperature()).toBe("25 (maximum reached)");
   });
 
   it('Can go above previous max temp with power saving off', () => {
@@ -57,7 +57,7 @@ describe('Thermostat', () => {
 
   it('Temp can not drop below 10', () => {
     thermostat.down();
-    expect(thermostat.getTemperature()).toBe(10);
+    expect(thermostat.getTemperature()).toBe("10 (minimum reached)");
   })
 
 });
