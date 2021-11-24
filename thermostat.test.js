@@ -17,12 +17,18 @@ describe('Thermostat', () => {
     expect(thermostat.getTemperature()).toBe(21);
   });
 
-  it('sets max temp based on powersaving', () => {
+  it('sets max temp based on power saving being on', () => {
     thermostat.setPowerSavingMode(true);
     for (let i = 0 ; i < 10 ; i++) {
       thermostat.up();
     }
     expect(thermostat.getTemperature()).toBe(25);
+  });
+
+  it('Can go above previous max temp with power saving off', () => {
+    thermostat.setPowerSavingMode(false);
+    thermostat.up();
+    expect(thermostat.getTemperature()).toBe(26);
   });
 
 });
