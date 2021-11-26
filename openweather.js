@@ -9,11 +9,7 @@ class Weather {
       callback(response.body);
     });
   }
-
 }
-const weather = new Weather();
-weather.fetchWeatherData('Barcelona', (weatherData) => {
-  console.log(JSON.parse(weatherData));
-})
 
-module.exports = Weather;
+
+module.exports = Weather, apiKey;

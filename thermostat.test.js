@@ -1,5 +1,6 @@
 const Thermostat = require('./thermostat');
 
+
 describe('Thermostat', () => {
   const thermostat = new Thermostat();
   it('get temperature - should return 20', () => {
